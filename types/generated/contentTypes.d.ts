@@ -424,10 +424,7 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.Text &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 80;
-      }>;
+    description: Schema.Attribute.Text;
     featured_image: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
     featured_video: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
@@ -549,6 +546,7 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
 export interface ApiTopicTopic extends Struct.CollectionTypeSchema {
   collectionName: 'topics';
   info: {
+    description: '';
     displayName: 'Topics';
     pluralName: 'topics';
     singularName: 'topic';
@@ -564,10 +562,12 @@ export interface ApiTopicTopic extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    icon: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::topic.topic'> &
       Schema.Attribute.Private;
     name: Schema.Attribute.String;
+    order: Schema.Attribute.Integer;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;

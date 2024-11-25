@@ -16,8 +16,7 @@
       "type": "string"
     },
     "description": {
-      "type": "text",
-      "maxLength": 80
+      "type": "text"
     },
     "slug": {
       "type": "uid",
@@ -56,14 +55,15 @@
       ]
     },
     "featured_video": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "featured_video_url": {
       "type": "string"
