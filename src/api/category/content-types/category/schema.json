@@ -26,6 +26,13 @@
     },
     "description": {
       "type": "text"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "articles",
+        "playlist"
+      ]
     }
   }
 }
