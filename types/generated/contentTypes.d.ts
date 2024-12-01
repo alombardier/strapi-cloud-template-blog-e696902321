@@ -439,6 +439,7 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
     post_status: Schema.Attribute.Enumeration<['draft', 'published', 'hidden']>;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'title'>;
+    source: Schema.Attribute.String;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
