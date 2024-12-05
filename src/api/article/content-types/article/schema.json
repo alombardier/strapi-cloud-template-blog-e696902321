@@ -78,6 +78,9 @@
     },
     "source": {
       "type": "string"
+    },
+    "short_title": {
+      "type": "string"
     }
   }
 }
